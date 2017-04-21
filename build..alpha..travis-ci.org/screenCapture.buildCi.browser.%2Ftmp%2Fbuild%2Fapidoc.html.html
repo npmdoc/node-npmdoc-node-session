@@ -1,0 +1,3504 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a>node-session (v1.2.1)</a>
+</h1>
+<h4>Session management for NodeJS</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-session">module node-session</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.node-session">
+            function <span class="apidocSignatureSpan"></span>node-session
+            <span class="apidocSignatureSpan">(config, encrypter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.DatabaseSessionHandler">
+            function <span class="apidocSignatureSpan">node-session.</span>DatabaseSessionHandler
+            <span class="apidocSignatureSpan">(model)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.EncryptedStore">
+            function <span class="apidocSignatureSpan">node-session.</span>EncryptedStore
+            <span class="apidocSignatureSpan">(name, handler, encrypter, secret, id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.FileSessionHandler">
+            function <span class="apidocSignatureSpan">node-session.</span>FileSessionHandler
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.MemorySessionHandler">
+            function <span class="apidocSignatureSpan">node-session.</span>MemorySessionHandler
+            <span class="apidocSignatureSpan">(session)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.SessionManager">
+            function <span class="apidocSignatureSpan">node-session.</span>SessionManager
+            <span class="apidocSignatureSpan">(config, encrypter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store">
+            function <span class="apidocSignatureSpan">node-session.</span>Store
+            <span class="apidocSignatureSpan">(name, handler, id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-session.</span>DatabaseSessionHandler.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-session.</span>EncryptedStore.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-session.</span>FileSessionHandler.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-session.</span>MemorySessionHandler.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-session.</span>SessionManager.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-session.</span>Store.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-session.</span>util</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-session.DatabaseSessionHandler">module node-session.DatabaseSessionHandler</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.DatabaseSessionHandler.DatabaseSessionHandler">
+            function <span class="apidocSignatureSpan">node-session.</span>DatabaseSessionHandler
+            <span class="apidocSignatureSpan">(model)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-session.DatabaseSessionHandler.prototype">module node-session.DatabaseSessionHandler.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.DatabaseSessionHandler.prototype.destroy">
+            function <span class="apidocSignatureSpan">node-session.DatabaseSessionHandler.prototype.</span>destroy
+            <span class="apidocSignatureSpan">(sessionId, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.DatabaseSessionHandler.prototype.gc">
+            function <span class="apidocSignatureSpan">node-session.DatabaseSessionHandler.prototype.</span>gc
+            <span class="apidocSignatureSpan">(maxAge)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.DatabaseSessionHandler.prototype.read">
+            function <span class="apidocSignatureSpan">node-session.DatabaseSessionHandler.prototype.</span>read
+            <span class="apidocSignatureSpan">(sessionId, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.DatabaseSessionHandler.prototype.setExists">
+            function <span class="apidocSignatureSpan">node-session.DatabaseSessionHandler.prototype.</span>setExists
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.DatabaseSessionHandler.prototype.write">
+            function <span class="apidocSignatureSpan">node-session.DatabaseSessionHandler.prototype.</span>write
+            <span class="apidocSignatureSpan">(sessionId, data, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-session.EncryptedStore">module node-session.EncryptedStore</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.EncryptedStore.EncryptedStore">
+            function <span class="apidocSignatureSpan">node-session.</span>EncryptedStore
+            <span class="apidocSignatureSpan">(name, handler, encrypter, secret, id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.EncryptedStore.super_">
+            function <span class="apidocSignatureSpan">node-session.EncryptedStore.</span>super_
+            <span class="apidocSignatureSpan">(name, handler, id)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-session.EncryptedStore.prototype">module node-session.EncryptedStore.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.EncryptedStore.prototype.__prepareForParse">
+            function <span class="apidocSignatureSpan">node-session.EncryptedStore.prototype.</span>__prepareForParse
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.EncryptedStore.prototype.__prepareForStorage">
+            function <span class="apidocSignatureSpan">node-session.EncryptedStore.prototype.</span>__prepareForStorage
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-session.FileSessionHandler">module node-session.FileSessionHandler</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.FileSessionHandler.FileSessionHandler">
+            function <span class="apidocSignatureSpan">node-session.</span>FileSessionHandler
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-session.FileSessionHandler.prototype">module node-session.FileSessionHandler.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.FileSessionHandler.prototype.destroy">
+            function <span class="apidocSignatureSpan">node-session.FileSessionHandler.prototype.</span>destroy
+            <span class="apidocSignatureSpan">(sessionId, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.FileSessionHandler.prototype.gc">
+            function <span class="apidocSignatureSpan">node-session.FileSessionHandler.prototype.</span>gc
+            <span class="apidocSignatureSpan">(maxAge)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.FileSessionHandler.prototype.read">
+            function <span class="apidocSignatureSpan">node-session.FileSessionHandler.prototype.</span>read
+            <span class="apidocSignatureSpan">(sessionId, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.FileSessionHandler.prototype.write">
+            function <span class="apidocSignatureSpan">node-session.FileSessionHandler.prototype.</span>write
+            <span class="apidocSignatureSpan">(sessionId, data, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-session.MemorySessionHandler">module node-session.MemorySessionHandler</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.MemorySessionHandler.MemorySessionHandler">
+            function <span class="apidocSignatureSpan">node-session.</span>MemorySessionHandler
+            <span class="apidocSignatureSpan">(session)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-session.MemorySessionHandler.prototype">module node-session.MemorySessionHandler.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.MemorySessionHandler.prototype.destroy">
+            function <span class="apidocSignatureSpan">node-session.MemorySessionHandler.prototype.</span>destroy
+            <span class="apidocSignatureSpan">(sessionId, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.MemorySessionHandler.prototype.read">
+            function <span class="apidocSignatureSpan">node-session.MemorySessionHandler.prototype.</span>read
+            <span class="apidocSignatureSpan">(sessionId, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.MemorySessionHandler.prototype.write">
+            function <span class="apidocSignatureSpan">node-session.MemorySessionHandler.prototype.</span>write
+            <span class="apidocSignatureSpan">(sessionId, data, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-session.SessionManager">module node-session.SessionManager</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.SessionManager.SessionManager">
+            function <span class="apidocSignatureSpan">node-session.</span>SessionManager
+            <span class="apidocSignatureSpan">(config, encrypter)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-session.SessionManager.prototype">module node-session.SessionManager.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.SessionManager.prototype.__buildSession">
+            function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>__buildSession
+            <span class="apidocSignatureSpan">(handler)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.SessionManager.prototype.__callCustomCreator">
+            function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>__callCustomCreator
+            <span class="apidocSignatureSpan">(driver, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.SessionManager.prototype.__createDatabaseDriver">
+            function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>__createDatabaseDriver
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.SessionManager.prototype.__createDriver">
+            function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>__createDriver
+            <span class="apidocSignatureSpan">(driver, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.SessionManager.prototype.__createFileDriver">
+            function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>__createFileDriver
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.SessionManager.prototype.__createMemoryDriver">
+            function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>__createMemoryDriver
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.SessionManager.prototype.__createNativeDriver">
+            function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>__createNativeDriver
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.SessionManager.prototype.__createSessionModel">
+            function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>__createSessionModel
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.SessionManager.prototype.__getSessionModel">
+            function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>__getSessionModel
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.SessionManager.prototype.driver">
+            function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>driver
+            <span class="apidocSignatureSpan">(driver, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.SessionManager.prototype.getDefaultDriver">
+            function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>getDefaultDriver
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.SessionManager.prototype.registerHandler">
+            function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>registerHandler
+            <span class="apidocSignatureSpan">(driver, handler)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.SessionManager.prototype.setEncrypter">
+            function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>setEncrypter
+            <span class="apidocSignatureSpan">(encrypter)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-session.Store">module node-session.Store</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.Store">
+            function <span class="apidocSignatureSpan">node-session.</span>Store
+            <span class="apidocSignatureSpan">(name, handler, id)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-session.Store.prototype">module node-session.Store.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.__generateSessionId">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>__generateSessionId
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.__isValidId">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>__isValidId
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.__loadSession">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>__loadSession
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.__mergeNewFlashes">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>__mergeNewFlashes
+            <span class="apidocSignatureSpan">(keys)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.__prepareForParse">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>__prepareForParse
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.__prepareForStorage">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>__prepareForStorage
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.__readFromHandler">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>__readFromHandler
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.__removeFromOldFlashData">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>__removeFromOldFlashData
+            <span class="apidocSignatureSpan">(keys)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.ageFlashData">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>ageFlashData
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.all">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>all
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.flash">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>flash
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.flashInput">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>flashInput
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.flush">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>flush
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.forget">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>forget
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.get">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>get
+            <span class="apidocSignatureSpan">(name, defaultValue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.getHandler">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>getHandler
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.getId">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>getId
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.getName">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>getName
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.getToken">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>getToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.has">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>has
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.keep">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>keep
+            <span class="apidocSignatureSpan">(keys)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.migrate">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>migrate
+            <span class="apidocSignatureSpan">(destroy)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.pull">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>pull
+            <span class="apidocSignatureSpan">(key, defaultValue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.push">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>push
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.put">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>put
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.reflash">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>reflash
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.regenerate">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>regenerate
+            <span class="apidocSignatureSpan">(destroy)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.regenerateToken">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>regenerateToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.save">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>save
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.set">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>set
+            <span class="apidocSignatureSpan">(name, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.setExists">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>setExists
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.setId">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>setId
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.Store.prototype.start">
+            function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>start
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-session.util">module node-session.util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.util.compileTrust">
+            function <span class="apidocSignatureSpan">node-session.util.</span>compileTrust
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-session.util.defineMember">
+            function <span class="apidocSignatureSpan">node-session.util.</span>defineMember
+            <span class="apidocSignatureSpan">(obj, name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-session" id="apidoc.module.node-session">module node-session</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.node-session" id="apidoc.element.node-session.node-session">
+        function <span class="apidocSignatureSpan"></span>node-session
+        <span class="apidocSignatureSpan">(config, encrypter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NodeSession(config, encrypter) {
+    var defaults = {
+        'driver': 'file',
+        'lifetime': 300000, // five minutes
+        'expireOnClose': false,
+        'files': process.cwd()+'/sessions',
+        'connection': false,
+        'table': 'sessions',
+        'lottery': [2, 100],
+        'cookie': 'node_session',
+        'path': '/',
+        'domain': null,
+        'secure': false,
+        'httpOnly': true,
+        'encrypt': false
+    };
+
+<span class="apidocCodeCommentSpan">    /**
+     * The Session configuration
+     *
+     * @type {Object}
+     * @private
+     */
+</span>    this.__config = _.merge(defaults, config);
+
+    if(this.__config.trustProxy &amp;&amp; !this.__config.trustProxyFn) {
+        this.__config.trustProxyFn = util.compileTrust(this.__config.trustProxy)
+    }
+
+    /**
+     * The session manager instance
+     * @type {SessionManager}
+     * @private
+     */
+    this.__manager = new SessionManager(this.__config, encrypter);
+
+    if (!this.__config.secret) {
+        throw new Error('secret option required for sessions');
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.DatabaseSessionHandler" id="apidoc.element.node-session.DatabaseSessionHandler">
+        function <span class="apidocSignatureSpan">node-session.</span>DatabaseSessionHandler
+        <span class="apidocSignatureSpan">(model)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DatabaseSessionHandler(model) {
+<span class="apidocCodeCommentSpan">    /**
+     * Session table waterline model instance.
+     *
+     * @type {Object}
+     * @private
+     */
+</span>    this.__model = model;
+
+    /**
+     * The existence state of the session.
+     *
+     * @type {Boolean}
+     */
+    this.__exists;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.EncryptedStore" id="apidoc.element.node-session.EncryptedStore">
+        function <span class="apidocSignatureSpan">node-session.</span>EncryptedStore
+        <span class="apidocSignatureSpan">(name, handler, encrypter, secret, id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EncryptedStore(name, handler, encrypter, secret, id) {
+    EncryptedStore.super_.apply(this, arguments);
+
+    if (!encrypter) {
+        encrypter = new Encrypter(secret);
+    }
+
+    this.__encrypter = encrypter;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.FileSessionHandler" id="apidoc.element.node-session.FileSessionHandler">
+        function <span class="apidocSignatureSpan">node-session.</span>FileSessionHandler
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FileSessionHandler(path) {
+<span class="apidocCodeCommentSpan">    /**
+     * The path where sessions should be stored.
+     *
+     * @type {String}
+     */
+</span>    this.__path = path;
+
+    /**
+     * Create directory for session storage.
+     */
+    fs.mkdirsSync(this.__path);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.MemorySessionHandler" id="apidoc.element.node-session.MemorySessionHandler">
+        function <span class="apidocSignatureSpan">node-session.</span>MemorySessionHandler
+        <span class="apidocSignatureSpan">(session)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MemorySessionHandler(session) {
+<span class="apidocCodeCommentSpan">    /**
+     * Object to keep all the sessions
+     *
+     * @type {Object}
+     * @private
+     */
+</span>
+    this.__sessions = session;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.SessionManager" id="apidoc.element.node-session.SessionManager">
+        function <span class="apidocSignatureSpan">node-session.</span>SessionManager
+        <span class="apidocSignatureSpan">(config, encrypter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SessionManager(config, encrypter) {
+<span class="apidocCodeCommentSpan">    /**
+     * The configuration object
+     *
+     * @var Object
+     * @protected
+     */
+</span>    this.__config = config;
+
+    /**
+     * The registered custom driver creators.
+     *
+     * @var Object
+     * @protected
+     */
+    this.__customCreators = {};
+
+    /**
+     * The encrypter instance.
+     * An encrypter implements encrypt and decrypt methods.
+     *
+     * @var Object
+     * @protected
+     */
+    this.__encrypter = encrypter;
+
+    /**
+     * The session database model instance
+     *
+     * @var Object
+     * @protected
+     */
+    this.__sessionModel;
+
+    /**
+     * The memory session handler storage
+     * @type {null}
+     * @protected
+     */
+    this.__memorySession = Object.create(null);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store" id="apidoc.element.node-session.Store">
+        function <span class="apidocSignatureSpan">node-session.</span>Store
+        <span class="apidocSignatureSpan">(name, handler, id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Store(name, handler, id) {
+    this.setId(id);
+    this.__name = name;
+    this.__handler = handler;
+
+<span class="apidocCodeCommentSpan">    /**
+     * The session attributes.
+     *
+     * @var {Object}
+     * @protected
+     */
+</span>    this.__attributes = {};
+
+    /**
+     * Session store started status.
+     *
+     * @var {Boolean}
+     */
+    this.__started = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-session.DatabaseSessionHandler" id="apidoc.module.node-session.DatabaseSessionHandler">module node-session.DatabaseSessionHandler</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.DatabaseSessionHandler.DatabaseSessionHandler" id="apidoc.element.node-session.DatabaseSessionHandler.DatabaseSessionHandler">
+        function <span class="apidocSignatureSpan">node-session.</span>DatabaseSessionHandler
+        <span class="apidocSignatureSpan">(model)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DatabaseSessionHandler(model) {
+<span class="apidocCodeCommentSpan">    /**
+     * Session table waterline model instance.
+     *
+     * @type {Object}
+     * @private
+     */
+</span>    this.__model = model;
+
+    /**
+     * The existence state of the session.
+     *
+     * @type {Boolean}
+     */
+    this.__exists;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-session.DatabaseSessionHandler.prototype" id="apidoc.module.node-session.DatabaseSessionHandler.prototype">module node-session.DatabaseSessionHandler.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.DatabaseSessionHandler.prototype.destroy" id="apidoc.element.node-session.DatabaseSessionHandler.prototype.destroy">
+        function <span class="apidocSignatureSpan">node-session.DatabaseSessionHandler.prototype.</span>destroy
+        <span class="apidocSignatureSpan">(sessionId, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroy = function (sessionId, callback) {
+    this.__model.destroy(sessionId, function (err) {
+        if (callback) {
+            callback(err);
+        }
+    })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Destroys a session.
+ *
+ * @param {String} sessionId
+ * @param {function} callback
+ */
+DatabaseSessionHandler.prototype.destroy = function (sessionId, callback) {
+    this.__model.<span class="apidocCodeKeywordSpan">destroy</span>(sessionId, function (err) {
+        if (callback) {
+            callback(err);
+        }
+    })
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.DatabaseSessionHandler.prototype.gc" id="apidoc.element.node-session.DatabaseSessionHandler.prototype.gc">
+        function <span class="apidocSignatureSpan">node-session.DatabaseSessionHandler.prototype.</span>gc
+        <span class="apidocSignatureSpan">(maxAge)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">gc = function (maxAge) {
+    var age = (new Date()).getTime() - maxAge;
+    this.__model.destroy({lastActivity: {'&lt;': age}}, function (err) {
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @private
+*/
+NodeSession.prototype.__collectGarbage = function (session) {
+   // Here we will see if this request hits the garbage collection lottery by hitting
+   // the odds needed to perform garbage collection on any given request. If we do
+   // hit it, we'll call this handler to let it delete all the expired sessions.
+   if (this.__configHitsLottery()) {
+       session.getHandler().gc &amp;&amp; session.getHandler().<span class="apidocCodeKeywordSpan">gc</span>(this.__config.lifetime
+);
+   }
+};
+
+/**
+* Determine if the configuration odds hit the lottery.
+*
+* @return {Boolean}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.DatabaseSessionHandler.prototype.read" id="apidoc.element.node-session.DatabaseSessionHandler.prototype.read">
+        function <span class="apidocSignatureSpan">node-session.DatabaseSessionHandler.prototype.</span>read
+        <span class="apidocSignatureSpan">(sessionId, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">read = function (sessionId, callback) {
+    var self = this;
+    var response = '';
+
+    this.__model.findOne(sessionId, function (err, session) {
+        if (!err &amp;&amp; session &amp;&amp; session.payload) {
+            self.__exists = true;
+
+            response = JSON.parse(session.payload);
+        }
+
+        if (callback) {
+            callback(response);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Read the session data from the handler.
+ *
+ * @param {function} callback
+ */
+Store.prototype.__readFromHandler = function (callback) {
+    var self = this;
+
+    this.__handler.<span class="apidocCodeKeywordSpan">read</span>(this.getId(), function afterRead(data) {
+if (data) {
+    try {
+        data = JSON.parse(self.__prepareForParse(data));
+    } catch (e) {
+
+    }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.DatabaseSessionHandler.prototype.setExists" id="apidoc.element.node-session.DatabaseSessionHandler.prototype.setExists">
+        function <span class="apidocSignatureSpan">node-session.DatabaseSessionHandler.prototype.</span>setExists
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setExists = function (value) {
+    this.__exists = value;
+
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @return {Boolean}
+ */
+Store.prototype.regenerate = function (destroy) {
+    if (destroy) {
+        this.__handler.destroy(this.getId());
+    }
+
+    this.<span class="apidocCodeKeywordSpan">setExists</span>(false);
+
+    this.setId();
+
+    return true;
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.DatabaseSessionHandler.prototype.write" id="apidoc.element.node-session.DatabaseSessionHandler.prototype.write">
+        function <span class="apidocSignatureSpan">node-session.DatabaseSessionHandler.prototype.</span>write
+        <span class="apidocSignatureSpan">(sessionId, data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (sessionId, data, callback) {
+    var self = this;
+    if (this.__exists) {
+        this.__model.update(sessionId,
+            {payload: JSON.stringify(data), lastActivity: (new Date()).getTime()},
+            function (err, record) {
+                if (!err) {
+                    self.__exists = true;
+                }
+
+                if (callback) {
+                    callback(err);
+                }
+            }
+        );
+    }
+    else {
+        this.__model.create(
+            {
+                id: sessionId,
+                payload: JSON.stringify(data),
+                lastActivity: (new Date()).getTime()
+            },
+            function (err, record) {
+                if (!err) {
+                    self.__exists = true;
+                }
+
+                if (callback) {
+                    callback(err);
+                }
+            }
+        );
+    }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {function} callback
+*/
+Store.prototype.save = function (callback) {
+   this.ageFlashData();
+
+   var self = this;
+
+   this.__handler.<span class="apidocCodeKeywordSpan">write</span>(this.getId(), this.__prepareForStorage(JSON.stringify(this.__attributes
+)), function (err) {
+       self.__started = false;
+       callback(err);
+   });
+};
+
+/**
+* Prepare the JSON string session data for storage.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-session.EncryptedStore" id="apidoc.module.node-session.EncryptedStore">module node-session.EncryptedStore</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.EncryptedStore.EncryptedStore" id="apidoc.element.node-session.EncryptedStore.EncryptedStore">
+        function <span class="apidocSignatureSpan">node-session.</span>EncryptedStore
+        <span class="apidocSignatureSpan">(name, handler, encrypter, secret, id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EncryptedStore(name, handler, encrypter, secret, id) {
+    EncryptedStore.super_.apply(this, arguments);
+
+    if (!encrypter) {
+        encrypter = new Encrypter(secret);
+    }
+
+    this.__encrypter = encrypter;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.EncryptedStore.super_" id="apidoc.element.node-session.EncryptedStore.super_">
+        function <span class="apidocSignatureSpan">node-session.EncryptedStore.</span>super_
+        <span class="apidocSignatureSpan">(name, handler, id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Store(name, handler, id) {
+    this.setId(id);
+    this.__name = name;
+    this.__handler = handler;
+
+<span class="apidocCodeCommentSpan">    /**
+     * The session attributes.
+     *
+     * @var {Object}
+     * @protected
+     */
+</span>    this.__attributes = {};
+
+    /**
+     * Session store started status.
+     *
+     * @var {Boolean}
+     */
+    this.__started = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-session.EncryptedStore.prototype" id="apidoc.module.node-session.EncryptedStore.prototype">module node-session.EncryptedStore.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.EncryptedStore.prototype.__prepareForParse" id="apidoc.element.node-session.EncryptedStore.prototype.__prepareForParse">
+        function <span class="apidocSignatureSpan">node-session.EncryptedStore.prototype.</span>__prepareForParse
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__prepareForParse = function (data) {
+    return this.__encrypter.decrypt(data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+Store.prototype.__readFromHandler = function (callback) {
+var self = this;
+
+this.__handler.read(this.getId(), function afterRead(data) {
+    if (data) {
+        try {
+            data = JSON.parse(self.<span class="apidocCodeKeywordSpan">__prepareForParse</span>(data));
+        } catch (e) {
+
+        }
+    }
+
+    callback(data ? data : {});
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.EncryptedStore.prototype.__prepareForStorage" id="apidoc.element.node-session.EncryptedStore.prototype.__prepareForStorage">
+        function <span class="apidocSignatureSpan">node-session.EncryptedStore.prototype.</span>__prepareForStorage
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__prepareForStorage = function (data) {
+    return this.__encrypter.encrypt(data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {function} callback
+*/
+Store.prototype.save = function (callback) {
+   this.ageFlashData();
+
+   var self = this;
+
+   this.__handler.write(this.getId(), this.<span class="apidocCodeKeywordSpan">__prepareForStorage</span>(JSON.stringify(this.__attributes
+)), function (err) {
+       self.__started = false;
+       callback(err);
+   });
+};
+
+/**
+* Prepare the JSON string session data for storage.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-session.FileSessionHandler" id="apidoc.module.node-session.FileSessionHandler">module node-session.FileSessionHandler</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.FileSessionHandler.FileSessionHandler" id="apidoc.element.node-session.FileSessionHandler.FileSessionHandler">
+        function <span class="apidocSignatureSpan">node-session.</span>FileSessionHandler
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FileSessionHandler(path) {
+<span class="apidocCodeCommentSpan">    /**
+     * The path where sessions should be stored.
+     *
+     * @type {String}
+     */
+</span>    this.__path = path;
+
+    /**
+     * Create directory for session storage.
+     */
+    fs.mkdirsSync(this.__path);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-session.FileSessionHandler.prototype" id="apidoc.module.node-session.FileSessionHandler.prototype">module node-session.FileSessionHandler.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.FileSessionHandler.prototype.destroy" id="apidoc.element.node-session.FileSessionHandler.prototype.destroy">
+        function <span class="apidocSignatureSpan">node-session.FileSessionHandler.prototype.</span>destroy
+        <span class="apidocSignatureSpan">(sessionId, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroy = function (sessionId, callback) {
+    fs.unlink(path.join(this.__path, sessionId), function (err) {
+        if (callback) {
+            callback(err)
+        }
+    })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Destroys a session.
+ *
+ * @param {String} sessionId
+ * @param {function} callback
+ */
+DatabaseSessionHandler.prototype.destroy = function (sessionId, callback) {
+    this.__model.<span class="apidocCodeKeywordSpan">destroy</span>(sessionId, function (err) {
+        if (callback) {
+            callback(err);
+        }
+    })
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.FileSessionHandler.prototype.gc" id="apidoc.element.node-session.FileSessionHandler.prototype.gc">
+        function <span class="apidocSignatureSpan">node-session.FileSessionHandler.prototype.</span>gc
+        <span class="apidocSignatureSpan">(maxAge)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">gc = function (maxAge) {
+    var self = this;
+
+    fs.readdir(self.__path, function (err, files) {
+        if (err || files.length === 0) {
+            return;
+        }
+        files.forEach(function (file) {
+            if (file[0] != '.') {
+                fs.stat(path.join(self.__path, file), function (err, stat) {
+                    if (!err) {
+                        if (stat.isFile() &amp;&amp; ((new Date()).getTime() - stat.atime.getTime() &gt; maxAge)) {
+                            self.destroy(file);
+                        }
+                    }
+                });
+            }
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @private
+*/
+NodeSession.prototype.__collectGarbage = function (session) {
+   // Here we will see if this request hits the garbage collection lottery by hitting
+   // the odds needed to perform garbage collection on any given request. If we do
+   // hit it, we'll call this handler to let it delete all the expired sessions.
+   if (this.__configHitsLottery()) {
+       session.getHandler().gc &amp;&amp; session.getHandler().<span class="apidocCodeKeywordSpan">gc</span>(this.__config.lifetime
+);
+   }
+};
+
+/**
+* Determine if the configuration odds hit the lottery.
+*
+* @return {Boolean}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.FileSessionHandler.prototype.read" id="apidoc.element.node-session.FileSessionHandler.prototype.read">
+        function <span class="apidocSignatureSpan">node-session.FileSessionHandler.prototype.</span>read
+        <span class="apidocSignatureSpan">(sessionId, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">read = function (sessionId, callback) {
+    fs.readFile(path.join(this.__path, sessionId), 'utf-8', function (err, file) {
+        if (err) {
+            file = '';
+        }
+        if (callback) {
+            callback(file);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Read the session data from the handler.
+ *
+ * @param {function} callback
+ */
+Store.prototype.__readFromHandler = function (callback) {
+    var self = this;
+
+    this.__handler.<span class="apidocCodeKeywordSpan">read</span>(this.getId(), function afterRead(data) {
+if (data) {
+    try {
+        data = JSON.parse(self.__prepareForParse(data));
+    } catch (e) {
+
+    }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.FileSessionHandler.prototype.write" id="apidoc.element.node-session.FileSessionHandler.prototype.write">
+        function <span class="apidocSignatureSpan">node-session.FileSessionHandler.prototype.</span>write
+        <span class="apidocSignatureSpan">(sessionId, data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (sessionId, data, callback) {
+    fs.writeFile(path.join(this.__path, sessionId), data, 'utf-8', function (err) {
+        if (callback) {
+            callback(err);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {function} callback
+*/
+Store.prototype.save = function (callback) {
+   this.ageFlashData();
+
+   var self = this;
+
+   this.__handler.<span class="apidocCodeKeywordSpan">write</span>(this.getId(), this.__prepareForStorage(JSON.stringify(this.__attributes
+)), function (err) {
+       self.__started = false;
+       callback(err);
+   });
+};
+
+/**
+* Prepare the JSON string session data for storage.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-session.MemorySessionHandler" id="apidoc.module.node-session.MemorySessionHandler">module node-session.MemorySessionHandler</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.MemorySessionHandler.MemorySessionHandler" id="apidoc.element.node-session.MemorySessionHandler.MemorySessionHandler">
+        function <span class="apidocSignatureSpan">node-session.</span>MemorySessionHandler
+        <span class="apidocSignatureSpan">(session)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MemorySessionHandler(session) {
+<span class="apidocCodeCommentSpan">    /**
+     * Object to keep all the sessions
+     *
+     * @type {Object}
+     * @private
+     */
+</span>
+    this.__sessions = session;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-session.MemorySessionHandler.prototype" id="apidoc.module.node-session.MemorySessionHandler.prototype">module node-session.MemorySessionHandler.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.MemorySessionHandler.prototype.destroy" id="apidoc.element.node-session.MemorySessionHandler.prototype.destroy">
+        function <span class="apidocSignatureSpan">node-session.MemorySessionHandler.prototype.</span>destroy
+        <span class="apidocSignatureSpan">(sessionId, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroy = function (sessionId, callback) {
+    delete this.__sessions[sessionId];
+    if (callback) {
+        callback()
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Destroys a session.
+ *
+ * @param {String} sessionId
+ * @param {function} callback
+ */
+DatabaseSessionHandler.prototype.destroy = function (sessionId, callback) {
+    this.__model.<span class="apidocCodeKeywordSpan">destroy</span>(sessionId, function (err) {
+        if (callback) {
+            callback(err);
+        }
+    })
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.MemorySessionHandler.prototype.read" id="apidoc.element.node-session.MemorySessionHandler.prototype.read">
+        function <span class="apidocSignatureSpan">node-session.MemorySessionHandler.prototype.</span>read
+        <span class="apidocSignatureSpan">(sessionId, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">read = function (sessionId, callback) {
+    callback(this.__sessions[sessionId]||'');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Read the session data from the handler.
+ *
+ * @param {function} callback
+ */
+Store.prototype.__readFromHandler = function (callback) {
+    var self = this;
+
+    this.__handler.<span class="apidocCodeKeywordSpan">read</span>(this.getId(), function afterRead(data) {
+if (data) {
+    try {
+        data = JSON.parse(self.__prepareForParse(data));
+    } catch (e) {
+
+    }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.MemorySessionHandler.prototype.write" id="apidoc.element.node-session.MemorySessionHandler.prototype.write">
+        function <span class="apidocSignatureSpan">node-session.MemorySessionHandler.prototype.</span>write
+        <span class="apidocSignatureSpan">(sessionId, data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (sessionId, data, callback) {
+    this.__sessions[sessionId] = data;
+    callback();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {function} callback
+*/
+Store.prototype.save = function (callback) {
+   this.ageFlashData();
+
+   var self = this;
+
+   this.__handler.<span class="apidocCodeKeywordSpan">write</span>(this.getId(), this.__prepareForStorage(JSON.stringify(this.__attributes
+)), function (err) {
+       self.__started = false;
+       callback(err);
+   });
+};
+
+/**
+* Prepare the JSON string session data for storage.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-session.SessionManager" id="apidoc.module.node-session.SessionManager">module node-session.SessionManager</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.SessionManager.SessionManager" id="apidoc.element.node-session.SessionManager.SessionManager">
+        function <span class="apidocSignatureSpan">node-session.</span>SessionManager
+        <span class="apidocSignatureSpan">(config, encrypter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SessionManager(config, encrypter) {
+<span class="apidocCodeCommentSpan">    /**
+     * The configuration object
+     *
+     * @var Object
+     * @protected
+     */
+</span>    this.__config = config;
+
+    /**
+     * The registered custom driver creators.
+     *
+     * @var Object
+     * @protected
+     */
+    this.__customCreators = {};
+
+    /**
+     * The encrypter instance.
+     * An encrypter implements encrypt and decrypt methods.
+     *
+     * @var Object
+     * @protected
+     */
+    this.__encrypter = encrypter;
+
+    /**
+     * The session database model instance
+     *
+     * @var Object
+     * @protected
+     */
+    this.__sessionModel;
+
+    /**
+     * The memory session handler storage
+     * @type {null}
+     * @protected
+     */
+    this.__memorySession = Object.create(null);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-session.SessionManager.prototype" id="apidoc.module.node-session.SessionManager.prototype">module node-session.SessionManager.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.SessionManager.prototype.__buildSession" id="apidoc.element.node-session.SessionManager.prototype.__buildSession">
+        function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>__buildSession
+        <span class="apidocSignatureSpan">(handler)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__buildSession = function (handler) {
+    if (this.__config.encrypt) {
+        return new EncryptedStore(
+            this.__config.cookie, handler, this.__encrypter, this.__config.secret
+        );
+    } else {
+        return new Store(this.__config.cookie, handler);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+* Create an instance of the memory session driver.
+*
+* @param {function} callback to return session driver instance
+* @protected
+*/
+SessionManager.prototype.__createMemoryDriver = function (callback) {
+   callback(this.<span class="apidocCodeKeywordSpan">__buildSession</span>(new MemorySessionHandler(this.__memorySession)));
+};
+
+/**
+* Create an instance of the file session driver.
+*
+* @param {function} callback to return session driver instance
+* @protected
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.SessionManager.prototype.__callCustomCreator" id="apidoc.element.node-session.SessionManager.prototype.__callCustomCreator">
+        function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>__callCustomCreator
+        <span class="apidocSignatureSpan">(driver, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__callCustomCreator = function (driver, callback) {
+    this.__customCreators[driver](this.__config, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+SessionManager.prototype.__createDriver = function (driver, callback) {
+    var method = '__create' + driver.charAt(0).toUpperCase() + driver.slice(1) + 'Driver';
+
+    // We'll check to see if a creator method exists for the given driver. If not we
+    // will check for a custom driver creator, which allows developers to create
+    // drivers using their own customized driver creator Closure to create it.
+    if (this.__customCreators[driver]) {
+        return this.<span class="apidocCodeKeywordSpan">__callCustomCreator</span>(driver, callback);
+    } else if (typeof this[method] === 'function') {
+        return this[method](callback);
+    }
+
+    throw new Error("Driver " + driver + " not supported.");
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.SessionManager.prototype.__createDatabaseDriver" id="apidoc.element.node-session.SessionManager.prototype.__createDatabaseDriver">
+        function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>__createDatabaseDriver
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__createDatabaseDriver = function (callback) {
+    var self = this;
+
+    this.__getSessionModel(function(model) {
+        callback(self.__buildSession(new DatabaseSessionHandler(model)))
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.SessionManager.prototype.__createDriver" id="apidoc.element.node-session.SessionManager.prototype.__createDriver">
+        function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>__createDriver
+        <span class="apidocSignatureSpan">(driver, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__createDriver = function (driver, callback) {
+    var method = '__create' + driver.charAt(0).toUpperCase() + driver.slice(1) + 'Driver';
+
+    // We'll check to see if a creator method exists for the given driver. If not we
+    // will check for a custom driver creator, which allows developers to create
+    // drivers using their own customized driver creator Closure to create it.
+    if (this.__customCreators[driver]) {
+        return this.__callCustomCreator(driver, callback);
+    } else if (typeof this[method] === 'function') {
+        return this[method](callback);
+    }
+
+    throw new Error("Driver " + driver + " not supported.");
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*
+* @param  {string} driver
+* @param {function} callback
+*/
+SessionManager.prototype.driver = function (driver, callback) {
+   driver = driver ? driver : this.getDefaultDriver();
+
+   this.<span class="apidocCodeKeywordSpan">__createDriver</span>(driver, callback);
+};
+
+/**
+* Create a new driver instance.
+*
+* @param  {String} driver
+* @param  {function} callback
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.SessionManager.prototype.__createFileDriver" id="apidoc.element.node-session.SessionManager.prototype.__createFileDriver">
+        function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>__createFileDriver
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__createFileDriver = function (callback) {
+    return this.__createNativeDriver(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.SessionManager.prototype.__createMemoryDriver" id="apidoc.element.node-session.SessionManager.prototype.__createMemoryDriver">
+        function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>__createMemoryDriver
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__createMemoryDriver = function (callback) {
+    callback(this.__buildSession(new MemorySessionHandler(this.__memorySession)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.SessionManager.prototype.__createNativeDriver" id="apidoc.element.node-session.SessionManager.prototype.__createNativeDriver">
+        function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>__createNativeDriver
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__createNativeDriver = function (callback) {
+    var path = this.__config.files;
+
+    callback(this.__buildSession(new FileSessionHandler(path)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+* Create an instance of the file session driver.
+*
+* @param {function} callback to return session driver instance
+* @protected
+*/
+SessionManager.prototype.__createFileDriver = function (callback) {
+   return this.<span class="apidocCodeKeywordSpan">__createNativeDriver</span>(callback);
+};
+
+/**
+* Create an instance of the file session driver.
+*
+* @param {function} callback to return session driver instance
+* @protected
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.SessionManager.prototype.__createSessionModel" id="apidoc.element.node-session.SessionManager.prototype.__createSessionModel">
+        function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>__createSessionModel
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__createSessionModel = function (callback) {
+    var self = this;
+    var adapters = {};
+    var orm = new Waterline();
+    var SessionModel = Waterline.Collection.extend({
+        identity: this.__config.table,
+        connection: this.__config.table,
+        migrate: 'safe',
+        autoCreatedAt: false,
+        autoUpdatedAt: false,
+        attributes: {
+            id: {
+                type: 'string',
+                unique: true
+            },
+            payload: 'string',
+            lastActivity: 'integer'
+        }
+    });
+
+    // Load the Models into the ORM
+    orm.loadCollection(SessionModel);
+
+    adapters[this.__config.connection.adapter] = require(this.__config.connection.adapter);
+
+    // Tear down previous session adapter connection with same adapter.
+    adapters[this.__config.connection.adapter].teardown(this.__config.table, function(){});
+
+    var initConf = {
+        adapters: adapters,
+        connections:{}
+    };
+    initConf.connections[this.__config.table] = this.__config.connection;
+
+    orm.initialize(initConf, function (err, models) {
+        if (err) {
+            throw err;
+        }
+
+        SessionModel = models.collections[self.__config.table];
+        callback(SessionModel);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *
+ * @param {function} callback
+ * @protected
+ */
+SessionManager.prototype.__getSessionModel = function (callback) {
+    if (!this.__sessionModel) {
+        var self = this;
+        this.<span class="apidocCodeKeywordSpan">__createSessionModel</span>(function(model) {
+            self.__sessionModel = model;
+            callback(self.__sessionModel);
+        });
+    } else {
+        callback(this.__sessionModel)
+    }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.SessionManager.prototype.__getSessionModel" id="apidoc.element.node-session.SessionManager.prototype.__getSessionModel">
+        function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>__getSessionModel
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__getSessionModel = function (callback) {
+    if (!this.__sessionModel) {
+        var self = this;
+        this.__createSessionModel(function(model) {
+            self.__sessionModel = model;
+            callback(self.__sessionModel);
+        });
+    } else {
+        callback(this.__sessionModel)
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*
+* @return {Object} Session driver instance
+* @protected
+*/
+SessionManager.prototype.__createDatabaseDriver = function (callback) {
+   var self = this;
+
+   this.<span class="apidocCodeKeywordSpan">__getSessionModel</span>(function(model) {
+       callback(self.__buildSession(new DatabaseSessionHandler(model)))
+   });
+};
+
+/**
+* Get the database session table model for the database driver.
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.SessionManager.prototype.driver" id="apidoc.element.node-session.SessionManager.prototype.driver">
+        function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>driver
+        <span class="apidocSignatureSpan">(driver, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">driver = function (driver, callback) {
+    driver = driver ? driver : this.getDefaultDriver();
+
+    this.__createDriver(driver, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Get the session implementation from the manager.
+ *
+ * @param {Object} request - http request object
+ * @param {function} callback - callback to return session object
+ */
+NodeSession.prototype.getSession = function (request, callback) {
+    var self = this;
+    this.__manager.<span class="apidocCodeKeywordSpan">driver</span>(null, function(session){
+        session.setId(self.__getCookie(request, session.getName()));
+
+        callback(session);
+    });
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.SessionManager.prototype.getDefaultDriver" id="apidoc.element.node-session.SessionManager.prototype.getDefaultDriver">
+        function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>getDefaultDriver
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDefaultDriver = function () {
+    return this.__config.driver;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+* Get a driver instance.
+*
+* @param  {string} driver
+* @param {function} callback
+*/
+SessionManager.prototype.driver = function (driver, callback) {
+   driver = driver ? driver : this.<span class="apidocCodeKeywordSpan">getDefaultDriver</span>();
+
+   this.__createDriver(driver, callback);
+};
+
+/**
+* Create a new driver instance.
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.SessionManager.prototype.registerHandler" id="apidoc.element.node-session.SessionManager.prototype.registerHandler">
+        function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>registerHandler
+        <span class="apidocSignatureSpan">(driver, handler)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">registerHandler = function (driver, handler) {
+    this.__customCreators[driver] = handler;
+
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.SessionManager.prototype.setEncrypter" id="apidoc.element.node-session.SessionManager.prototype.setEncrypter">
+        function <span class="apidocSignatureSpan">node-session.SessionManager.prototype.</span>setEncrypter
+        <span class="apidocSignatureSpan">(encrypter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setEncrypter = function (encrypter) {
+    this.__encrypter = encrypter;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+ * Update session manager encrypter service.
+ *
+ * @param {Object} encrypter
+ */
+NodeSession.prototype.setEncrypter = function (encrypter) {
+    this.__manager.<span class="apidocCodeKeywordSpan">setEncrypter</span>(encrypter);
+};
+
+
+module.exports = NodeSession;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-session.Store" id="apidoc.module.node-session.Store">module node-session.Store</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.Store" id="apidoc.element.node-session.Store.Store">
+        function <span class="apidocSignatureSpan">node-session.</span>Store
+        <span class="apidocSignatureSpan">(name, handler, id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Store(name, handler, id) {
+    this.setId(id);
+    this.__name = name;
+    this.__handler = handler;
+
+<span class="apidocCodeCommentSpan">    /**
+     * The session attributes.
+     *
+     * @var {Object}
+     * @protected
+     */
+</span>    this.__attributes = {};
+
+    /**
+     * Session store started status.
+     *
+     * @var {Boolean}
+     */
+    this.__started = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-session.Store.prototype" id="apidoc.module.node-session.Store.prototype">module node-session.Store.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.__generateSessionId" id="apidoc.element.node-session.Store.prototype.__generateSessionId">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>__generateSessionId
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__generateSessionId = function () {
+    return uid(30);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+* Returns the session ID.
+*
+* @return {String} The session ID.
+*/
+Store.prototype.setId = function (id) {
+   if (!this.__isValidId(id)) {
+       id = this.<span class="apidocCodeKeywordSpan">__generateSessionId</span>();
+   }
+
+   this.__id = id;
+};
+
+/**
+* Determine if given id is a valid session ID.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.__isValidId" id="apidoc.element.node-session.Store.prototype.__isValidId">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>__isValidId
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__isValidId = function (id) {
+    return typeof id === 'string' &amp;&amp; /^[A-Za-z0-9-_]{40}$/.test(id);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+ * Returns the session ID.
+ *
+ * @return {String} The session ID.
+ */
+Store.prototype.setId = function (id) {
+    if (!this.<span class="apidocCodeKeywordSpan">__isValidId</span>(id)) {
+        id = this.__generateSessionId();
+    }
+
+    this.__id = id;
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.__loadSession" id="apidoc.element.node-session.Store.prototype.__loadSession">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>__loadSession
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__loadSession = function (callback) {
+    var self = this;
+
+    this.__readFromHandler(function (data) {
+        self.__attributes = _.merge(self.__attributes, data);
+        callback();
+    });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *
+ * @return {Boolean} True if session started.
+ * @throws Error If session fails to start.
+ */
+Store.prototype.start = function (callback) {
+    var self = this;
+
+    this.<span class="apidocCodeKeywordSpan">__loadSession</span>(function () {
+if (!self.__attributes['_token']) {
+    self.regenerateToken();
+}
+
+self.__started = true;
+
+callback();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.__mergeNewFlashes" id="apidoc.element.node-session.Store.prototype.__mergeNewFlashes">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>__mergeNewFlashes
+        <span class="apidocSignatureSpan">(keys)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__mergeNewFlashes = function (keys) {
+    var values = _.uniq((this.get('flash.new', [])).concat(keys));
+
+    this.put('flash.new', values);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   this.put('flash.old', _.difference(this.get('flash.old', []), keys));
+};
+
+/**
+* Re-flash all of the session flash data.
+*/
+Store.prototype.reflash = function () {
+   this.<span class="apidocCodeKeywordSpan">__mergeNewFlashes</span>(this.get('flash.old', []));
+
+   this.put('flash.old', []);
+};
+
+/**
+* Merge new flash keys into the new flash array.
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.__prepareForParse" id="apidoc.element.node-session.Store.prototype.__prepareForParse">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>__prepareForParse
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__prepareForParse = function (data) {
+    return data;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+Store.prototype.__readFromHandler = function (callback) {
+var self = this;
+
+this.__handler.read(this.getId(), function afterRead(data) {
+    if (data) {
+        try {
+            data = JSON.parse(self.<span class="apidocCodeKeywordSpan">__prepareForParse</span>(data));
+        } catch (e) {
+
+        }
+    }
+
+    callback(data ? data : {});
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.__prepareForStorage" id="apidoc.element.node-session.Store.prototype.__prepareForStorage">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>__prepareForStorage
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__prepareForStorage = function (data) {
+    return data;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {function} callback
+*/
+Store.prototype.save = function (callback) {
+   this.ageFlashData();
+
+   var self = this;
+
+   this.__handler.write(this.getId(), this.<span class="apidocCodeKeywordSpan">__prepareForStorage</span>(JSON.stringify(this.__attributes
+)), function (err) {
+       self.__started = false;
+       callback(err);
+   });
+};
+
+/**
+* Prepare the JSON string session data for storage.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.__readFromHandler" id="apidoc.element.node-session.Store.prototype.__readFromHandler">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>__readFromHandler
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__readFromHandler = function (callback) {
+    var self = this;
+
+    this.__handler.read(this.getId(), function afterRead(data) {
+        if (data) {
+            try {
+                data = JSON.parse(self.__prepareForParse(data));
+            } catch (e) {
+
+            }
+        }
+
+        callback(data ? data : {});
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *
+ * @param {function} callback
+ * @protected
+ */
+Store.prototype.__loadSession = function (callback) {
+    var self = this;
+
+    this.<span class="apidocCodeKeywordSpan">__readFromHandler</span>(function (data) {
+        self.__attributes = _.merge(self.__attributes, data);
+        callback();
+    });
+
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.__removeFromOldFlashData" id="apidoc.element.node-session.Store.prototype.__removeFromOldFlashData">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>__removeFromOldFlashData
+        <span class="apidocSignatureSpan">(keys)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__removeFromOldFlashData = function (keys) {
+    this.put('flash.old', _.difference(this.get('flash.old', []), keys));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param  {*}   value
+*/
+Store.prototype.flash = function (key, value) {
+   this.put(key, value);
+
+   this.push('flash.new', key);
+
+   this.<span class="apidocCodeKeywordSpan">__removeFromOldFlashData</span>([key]);
+};
+
+/**
+* Flash an input array to the session.
+*
+* @param  {Array} value
+*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.ageFlashData" id="apidoc.element.node-session.Store.prototype.ageFlashData">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>ageFlashData
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ageFlashData = function () {
+    var self = this;
+
+    this.get('flash.old', []).forEach(function (old) {
+        self.forget(old);
+    });
+
+    this.put('flash.old', this.get('flash.new', []));
+
+    this.put('flash.new', []);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+/**
+ * Force the session to be saved and closed.
+ * @param {function} callback
+ */
+Store.prototype.save = function (callback) {
+this.<span class="apidocCodeKeywordSpan">ageFlashData</span>();
+
+var self = this;
+
+this.__handler.write(this.getId(), this.__prepareForStorage(JSON.stringify(this.__attributes)), function (err) {
+    self.__started = false;
+    callback(err);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.all" id="apidoc.element.node-session.Store.prototype.all">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>all
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">all = function () {
+    return this.__attributes;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var value = req.session.pull('key', 'default');
+```
+
+**Retrieving All Data From The Session**
+
+```javascript
+var data = req.session.<span class="apidocCodeKeywordSpan">all</span>();
+```
+
+**Determining If An Item Exists In The Session**
+
+```javascript
+if (req.session.has('users'))
+{
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.flash" id="apidoc.element.node-session.Store.prototype.flash">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>flash
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flash = function (key, value) {
+    this.put(key, value);
+
+    this.push('flash.new', key);
+
+    this.__removeFromOldFlashData([key]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Flash Data
+
+Sometimes you may wish to store items in the session only for the next request. You may do so using the
+`req.session.flash` method:
+
+```javascript
+req.session.<span class="apidocCodeKeywordSpan">flash</span>('key', 'value');
+```
+
+**Reflashing The Current Flash Data For Another Request**
+
+```javascript
+req.session.reflash();
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.flashInput" id="apidoc.element.node-session.Store.prototype.flashInput">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>flashInput
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flashInput = function (value)
+{
+    value = [].concat(value)
+    this.flash('_old_input', value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.flush" id="apidoc.element.node-session.Store.prototype.flush">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>flush
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flush = function () {
+    this.__attributes = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+req.session.forget('key');
+```
+
+**Removing All Items From The Session**
+
+```javascript
+req.session.<span class="apidocCodeKeywordSpan">flush</span>();
+```
+
+**Regenerating The Session ID**
+
+```javascript
+req.session.regenerate();
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.forget" id="apidoc.element.node-session.Store.prototype.forget">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>forget
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">forget = function (key) {
+    delete this.__attributes[key];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    //
+}
+```
+
+**Removing An Item From The Session**
+
+```javascript
+req.session.<span class="apidocCodeKeywordSpan">forget</span>('key');
+```
+
+**Removing All Items From The Session**
+
+```javascript
+req.session.flush();
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.get" id="apidoc.element.node-session.Store.prototype.get">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>get
+        <span class="apidocSignatureSpan">(name, defaultValue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (name, defaultValue) {
+    var value = dotAccess.get(this.__attributes, name);
+    return value === undefined ? defaultValue : value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+req.session.push('user.teams', 'developers');
+```
+
+**Retrieving An Item From The Session**
+
+```javascript
+var value = req.session.<span class="apidocCodeKeywordSpan">get</span>('key');
+```
+
+**Retrieving An Item Or Returning A Default Value**
+
+```javascript
+var value = req.session.get('key', 'default');
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.getHandler" id="apidoc.element.node-session.Store.prototype.getHandler">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>getHandler
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getHandler = function () {
+    return this.__handler;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @private
+*/
+NodeSession.prototype.__collectGarbage = function (session) {
+   // Here we will see if this request hits the garbage collection lottery by hitting
+   // the odds needed to perform garbage collection on any given request. If we do
+   // hit it, we'll call this handler to let it delete all the expired sessions.
+   if (this.__configHitsLottery()) {
+       session.<span class="apidocCodeKeywordSpan">getHandler</span>().gc &amp;&amp; session.getHandler().gc(this.__config.lifetime
+);
+   }
+};
+
+/**
+* Determine if the configuration odds hit the lottery.
+*
+* @return {Boolean}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.getId" id="apidoc.element.node-session.Store.prototype.getId">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>getId
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getId = function () {
+    return this.__id;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+       data.maxAge = maxAge;
+   }
+
+   this.__setCookie(
+       request,
+       response,
+       session.getName(),
+       session.<span class="apidocCodeKeywordSpan">getId</span>(),
+       data
+   );
+};
+
+/**
+* Get the cookie lifetime in seconds.
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.getName" id="apidoc.element.node-session.Store.prototype.getName">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>getName
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getName = function () {
+    return this.__name;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*
+* @param {Object} request - http request object
+* @param {function} callback - callback to return session object
+*/
+NodeSession.prototype.getSession = function (request, callback) {
+   var self = this;
+   this.__manager.driver(null, function(session){
+       session.setId(self.__getCookie(request, session.<span class="apidocCodeKeywordSpan">getName</span>()));
+
+       callback(session);
+   });
+};
+
+/**
+* Add the session cookie to the application response.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.getToken" id="apidoc.element.node-session.Store.prototype.getToken">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>getToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getToken = function () {
+    return this.get('_token');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## CSRF Token
+
+By default NodeSession generates and keeps CSRF token for your application in session.
+
+**Access CSRF token**
+
+```javascript
+req.session.<span class="apidocCodeKeywordSpan">getToken</span>()
+```
+
+**Regenerate CSRF token**
+
+```javascript
+req.session.regenerateToken()
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.has" id="apidoc.element.node-session.Store.prototype.has">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>has
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">has = function (name) {
+    return this.get(name) != undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var data = req.session.all();
+```
+
+**Determining If An Item Exists In The Session**
+
+```javascript
+if (req.session.<span class="apidocCodeKeywordSpan">has</span>('users'))
+{
+    //
+}
+```
+
+**Removing An Item From The Session**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.keep" id="apidoc.element.node-session.Store.prototype.keep">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>keep
+        <span class="apidocSignatureSpan">(keys)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">keep = function (keys) {
+    keys = _.isArray(keys) ? keys : Array.prototype.slice.call(arguments);
+
+    this.__mergeNewFlashes(keys);
+
+    this.__removeFromOldFlashData(keys);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+req.session.reflash();
+```
+
+**Reflashing Only A Subset Of Flash Data**
+
+```javascript
+req.session.<span class="apidocCodeKeywordSpan">keep</span>('username', 'email');
+```
+
+
+## CSRF Token
+
+By default NodeSession generates and keeps CSRF token for your application in session.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.migrate" id="apidoc.element.node-session.Store.prototype.migrate">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>migrate
+        <span class="apidocSignatureSpan">(destroy)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">migrate = function (destroy) {
+    if (destroy) {
+        this.__handler.destroy(this.getId());
+    }
+
+    this.setExists(false);
+    this.setId();
+
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.pull" id="apidoc.element.node-session.Store.prototype.pull">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>pull
+        <span class="apidocSignatureSpan">(key, defaultValue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pull = function (key, defaultValue) {
+    if (defaultValue === undefined) {
+        defaultValue = null;
+    }
+
+    if (this.__attributes[key]) {
+        defaultValue = this.__attributes[key];
+        delete this.__attributes[key]
+    }
+
+    return defaultValue;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var value = req.session.get('key', 'default');
+```
+
+**Retrieving An Item And Forgetting It**
+
+```javascript
+var value = req.session.<span class="apidocCodeKeywordSpan">pull</span>('key', 'default');
+```
+
+**Retrieving All Data From The Session**
+
+```javascript
+var data = req.session.all();
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.push" id="apidoc.element.node-session.Store.prototype.push">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>push
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">push = function (key, value) {
+    var array = this.get(key, []);
+    if (_.isArray(array)) {
+        array.push(value);
+
+        this.put(key, array);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+req.session.put('key', 'value');
+```
+
+**Push A Value Onto An Array Session Value**
+
+```javascript
+req.session.<span class="apidocCodeKeywordSpan">push</span>('user.teams', 'developers');
+```
+
+**Retrieving An Item From The Session**
+
+```javascript
+var value = req.session.get('key');
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.put" id="apidoc.element.node-session.Store.prototype.put">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>put
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">put = function (key, value) {
+    if (!_.isObject(key)) {
+        var temp = {};
+        temp[key] = value;
+        key = temp;
+    }
+
+    var objKey;
+
+    for (objKey in key) {
+        if (key.hasOwnProperty(objKey)) {
+            this.set(objKey, key[objKey])
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+**Accessing sessions**
+
+The session can be accessed via the HTTP request's session property.
+
+**Storing An Item In The Session**
+
+```javascript
+req.session.<span class="apidocCodeKeywordSpan">put</span>('key', 'value');
+```
+
+**Push A Value Onto An Array Session Value**
+
+```javascript
+req.session.push('user.teams', 'developers');
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.reflash" id="apidoc.element.node-session.Store.prototype.reflash">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>reflash
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reflash = function () {
+    this.__mergeNewFlashes(this.get('flash.old', []));
+
+    this.put('flash.old', []);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+req.session.flash('key', 'value');
+```
+
+**Reflashing The Current Flash Data For Another Request**
+
+```javascript
+req.session.<span class="apidocCodeKeywordSpan">reflash</span>();
+```
+
+**Reflashing Only A Subset Of Flash Data**
+
+```javascript
+req.session.keep('username', 'email');
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.regenerate" id="apidoc.element.node-session.Store.prototype.regenerate">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>regenerate
+        <span class="apidocSignatureSpan">(destroy)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">regenerate = function (destroy) {
+    if (destroy) {
+        this.__handler.destroy(this.getId());
+    }
+
+    this.setExists(false);
+
+    this.setId();
+
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+req.session.flush();
+```
+
+**Regenerating The Session ID**
+
+```javascript
+req.session.<span class="apidocCodeKeywordSpan">regenerate</span>();
+```
+
+
+## Flash Data
+
+Sometimes you may wish to store items in the session only for the next request. You may do so using the
+`req.session.flash` method:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.regenerateToken" id="apidoc.element.node-session.Store.prototype.regenerateToken">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>regenerateToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">regenerateToken = function () {
+    this.put('_token', uid(30));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+req.session.getToken()
+```
+
+**Regenerate CSRF token**
+
+```javascript
+req.session.<span class="apidocCodeKeywordSpan">regenerateToken</span>()
+```
+
+
+## configuration
+
+Configuration options are passed during initialization of NodeSession module as an object. NodeSession supports following configuration
+options.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.save" id="apidoc.element.node-session.Store.prototype.save">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>save
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">save = function (callback) {
+    this.ageFlashData();
+
+    var self = this;
+
+    this.__handler.write(this.getId(), this.__prepareForStorage(JSON.stringify(this.__attributes)), function (err) {
+        self.__started = false;
+        callback(err);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* Closes the given session.
+*
+* @param {Object} session - the session object
+* @param {function} callback
+* @private
+*/
+NodeSession.prototype.__closeSession = function (session, callback) {
+   session.<span class="apidocCodeKeywordSpan">save</span>(callback);
+   //@todo: note callback is executed after save, not waiting for garbage collection to complete
+   this.__collectGarbage(session);
+};
+
+/**
+* Remove the garbage from the session if necessary.
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.set" id="apidoc.element.node-session.Store.prototype.set">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>set
+        <span class="apidocSignatureSpan">(name, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (name, value) {
+    try {
+        dotAccess.set(this.__attributes, name, value);
+    } catch (e) {
+        util.defineMember(this.__attributes, name);
+        dotAccess.set(this.__attributes, name, value);
+    }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Sets an attribute.
+ *
+ * @param {string} name
+ * @param {*} value
+ */
+Store.prototype.set = function (name, value) {
+    try {
+        dotAccess.<span class="apidocCodeKeywordSpan">set</span>(this.__attributes, name, value);
+    } catch (e) {
+        util.defineMember(this.__attributes, name);
+        dotAccess.set(this.__attributes, name, value);
+    }
+
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.setExists" id="apidoc.element.node-session.Store.prototype.setExists">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>setExists
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setExists = function (value) {
+    if (_.isFunction(this.__handler.setExists)) {
+        this.__handler.setExists(value);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @return {Boolean}
+ */
+Store.prototype.regenerate = function (destroy) {
+    if (destroy) {
+        this.__handler.destroy(this.getId());
+    }
+
+    this.<span class="apidocCodeKeywordSpan">setExists</span>(false);
+
+    this.setId();
+
+    return true;
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.setId" id="apidoc.element.node-session.Store.prototype.setId">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>setId
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setId = function (id) {
+    if (!this.__isValidId(id)) {
+        id = this.__generateSessionId();
+    }
+
+    this.__id = id;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*
+* @param {Object} request - http request object
+* @param {function} callback - callback to return session object
+*/
+NodeSession.prototype.getSession = function (request, callback) {
+   var self = this;
+   this.__manager.driver(null, function(session){
+       session.<span class="apidocCodeKeywordSpan">setId</span>(self.__getCookie(request, session.getName()));
+
+       callback(session);
+   });
+};
+
+/**
+* Add the session cookie to the application response.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.Store.prototype.start" id="apidoc.element.node-session.Store.prototype.start">
+        function <span class="apidocSignatureSpan">node-session.Store.prototype.</span>start
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (callback) {
+    var self = this;
+
+    this.__loadSession(function () {
+        if (!self.__attributes['_token']) {
+            self.regenerateToken();
+        }
+
+        self.__started = true;
+
+        callback();
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {function} callback
+* @private
+*/
+NodeSession.prototype.__startSession = function (request, callback) {
+   this.getSession(request, function(session) {
+       request.session = session;
+
+       session.<span class="apidocCodeKeywordSpan">start</span>(callback);
+   });
+};
+
+/**
+* Get the session implementation from the manager.
+*
+* @param {Object} request - http request object
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-session.util" id="apidoc.module.node-session.util">module node-session.util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.util.compileTrust" id="apidoc.element.node-session.util.compileTrust">
+        function <span class="apidocSignatureSpan">node-session.util.</span>compileTrust
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compileTrust = function (val) {
+    if (typeof val === 'function') return val;
+
+    if (val === true) {
+        // Support plain true/false
+        return function(){ return true };
+    }
+
+    if (typeof val === 'number') {
+        // Support trusting hop count
+        return function(a, i){ return i &lt; val };
+    }
+
+    if (typeof val === 'string') {
+        // Support comma-separated values
+        val = val.split(/ *, */);
+    }
+
+    return proxyaddr.compile(val || []);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *
+ * @type {Object}
+ * @private
+ */
+this.__config = _.merge(defaults, config);
+
+if(this.__config.trustProxy &amp;&amp; !this.__config.trustProxyFn) {
+    this.__config.trustProxyFn = util.<span class="apidocCodeKeywordSpan">compileTrust</span>(this.__config.trustProxy)
+}
+
+/**
+ * The session manager instance
+ * @type {SessionManager}
+ * @private
+ */
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-session.util.defineMember" id="apidoc.element.node-session.util.defineMember">
+        function <span class="apidocSignatureSpan">node-session.util.</span>defineMember
+        <span class="apidocSignatureSpan">(obj, name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defineMember = function (obj, name) {
+    var nameSplit = name.split('.');
+    var i;
+    var exists = obj;
+
+    for (i = 0; i &lt; nameSplit.length - 1; i++) {
+        if (!exists.hasOwnProperty(nameSplit[i]) || typeof exists[nameSplit[i]] !== 'object') {
+            exists[nameSplit[i]] = {};
+        }
+        exists = exists[nameSplit[i]]
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {string} name
+* @param {*} value
+*/
+Store.prototype.set = function (name, value) {
+   try {
+       dotAccess.set(this.__attributes, name, value);
+   } catch (e) {
+       util.<span class="apidocCodeKeywordSpan">defineMember</span>(this.__attributes, name);
+       dotAccess.set(this.__attributes, name, value);
+   }
+
+};
+
+/**
+* Regenerate the CSRF token value.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
